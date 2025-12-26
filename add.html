@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Talaba qo‘shish</title>
+  <script src="https://api-maps.yandex.ru/2.1/?apikey=API_KALITINGIZ&lang=uz_UZ"></script>
+</head>
+<body>
+
+<h3>Talaba manzilini belgilang</h3>
+<div id="map" style="width:100%;height:400px"></div>
+
+<script>
+ymaps.ready(() => {
+  var map = new ymaps.Map("map", {
+    center: [41.55, 60.63],
+    zoom: 12
+  });
+
+  map.events.add('click', function (e) {
+    var coords = e.get('coords');
+    alert("Koordinata: " + coords);
+  });
+});
+</script>
+
+</body>
+</html>
